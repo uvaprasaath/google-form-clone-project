@@ -8,8 +8,10 @@ function Answer({sections,data,currentIndex}) {
   return (
     <>
     {sections.map((section) => (
-        <>
-          <Box
+      data.sections[`${section._id}`] ?  
+       <>
+           
+           <Box
             sx={{
               marginTop: 3,
               padding: "1.5rem",
@@ -104,7 +106,9 @@ function Answer({sections,data,currentIndex}) {
                </Box>
                </FormControl>
             )}
-            </>)
+            </> 
+            : <></>
+            )
         )}
   </>)
 }

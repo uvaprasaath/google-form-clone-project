@@ -68,7 +68,7 @@ function CreateForm() {
         });
       }
 
-      console.log("the result is ", result);
+  
       if (result.data.header.code === 600) {
         navigate(-1, { state: true });
       }

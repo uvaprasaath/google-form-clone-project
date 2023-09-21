@@ -10,6 +10,7 @@ import LandingPage from './pages/landing';
 import Forms from './pages/forms';
 import CreateForm from './pages/createform';
 import ResponseForm from "./pages/responseform";
+import Required from "./pages/required";
 
 
 
@@ -27,8 +28,8 @@ function App() {
               <Route path='login' element={<Login/>}/>
               <Route path='signup' element={<SignupPage/>}/>
           </Route>
-          <Route path="/forms" element={<Forms/>}/>
-          <Route path='/forms/edit' element={<CreateForm/>}/>
+          <Route path="/forms" element={<Required><Forms/></Required>}/>
+          <Route path='/forms/edit' element={<Required><CreateForm/></Required>}/>
           <Route path='/forms/:id' element={<ResponseForm/>}/>
          </Routes>
       </ThemeProvider>
