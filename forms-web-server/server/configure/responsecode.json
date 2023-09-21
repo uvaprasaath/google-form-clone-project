@@ -1,0 +1,12 @@
+
+{
+ "success" : 600,
+ "servererror" : 604,
+ "internalservererror" : 502,
+"duplicate" : 615,
+"notFound" : 602,
+"invalidcredential" : 603,
+"invalidtime" : 700,
+"alreadyslotbooked" : 715,
+"notacceptingresponses":800
+}
