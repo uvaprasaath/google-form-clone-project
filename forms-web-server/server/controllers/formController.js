@@ -1,4 +1,4 @@
-import { createForm, formStatistics, getFormId, updateForm, updateView } from '../repo/formRepo';
+import { createForm, deleteForm, formStatistics, getFormId, updateForm, updateView } from '../repo/formRepo';
 import customresponsecode from "../configure/responsecode.json"
 import httpresponsecode from  "../configure/httpresponsecode.json"
 import response from "../configure/response"  
@@ -58,7 +58,16 @@ export async function getStatistics(req,res){
 
 export async function incrementViews(req,res){
     try {
-        let result = await updateView(req.params.id)
+       await updateView(req.params.id)
+        return res.status(httpresponsecode.OK).json(response(customresponsecode.success,null,null))
+    } catch (error) {
+        return res.status(httpresponsecode.INTERNAL_SERVER_ERROR).json(response(customresponsecode.servererror,null,error.message))
+    }
+}
+
+export async function deleteFormController(req,res){
+    try {
+       await deleteForm(req.params.id)
         return res.status(httpresponsecode.OK).json(response(customresponsecode.success,null,null))
     } catch (error) {
         return res.status(httpresponsecode.INTERNAL_SERVER_ERROR).json(response(customresponsecode.servererror,null,error.message))

@@ -101,3 +101,16 @@ export async function updateView(formId){
         throw error;
     }
 }
+
+
+
+export async function deleteForm(formId){
+  try {
+    const formDeleteResult = await Form.deleteOne({ _id: formId });
+    const responseDeleteResult = await Responses.deleteMany({ formId });
+    return ;
+  } catch (error) {
+    console.error('Error:', error);
+    throw error
+  }
+}

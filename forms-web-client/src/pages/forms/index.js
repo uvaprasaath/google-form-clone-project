@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import NavBar from "../../components/NavBar";
-import { Box, CircularProgress, Dialog, Fab, IconButton, Typography, useMediaQuery } from "@mui/material";
+import { Box, Button, CircularProgress, Dialog, DialogContent, DialogTitle, Fab, IconButton, Typography, useMediaQuery } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import { Outlet, useNavigate } from "react-router-dom";
 import PageBuilder from "../Pagebuilder";
-import { getForm, getForms } from "../../services/formservice";
+import { deleteForm, getForm, getForms } from "../../services/formservice";
 import { Authstate } from "../../components/aurthprovider";
 import { DataGrid } from "@mui/x-data-grid";
 import SnackbarComponent from "../../components/snackbar";
@@ -17,6 +17,7 @@ function Forms({ data, loading, error, loadData }) {
   let navigate = useNavigate();
   const { user } = Authstate();
   const [open,setOpen] = useState(false);
+  const [isDelete,deleteHandler] = useState(false);
   const [page,setPage] = useState(0);
   const [pageSize,setPageSize] = useState(20);
   const [handling,setHandling] = useState(handler)
@@ -51,6 +52,17 @@ function Forms({ data, loading, error, loadData }) {
  const handleSnackbarClose = () => {
   setHandling({...handler})
 };
+
+const deleteFormHandler = async(formId)=>{
+  try {
+    await deleteForm(formId);
+    setHandling({...handler});
+    loadData(fetchData);
+  } catch (error) {
+    console.log(error);
+    setHandling({...handling,isLoading:false,isError:true})
+  }
+}
 
   useEffect(() => {
     loadData(fetchData);
@@ -88,16 +100,21 @@ function Forms({ data, loading, error, loadData }) {
 </IconButton>
 }},
 {field:"views",headerName:"Views"},
+{field:"delete",headerName: '', sortable: false ,align:"center",renderCell:(params)=>{
+  return  <Button sx={{backgroundColor:"red",color:"white"}}  >
+  Delete
+</Button>
+}}
   ];
 
-  const dataGridStyle = {
-    border: 'none',
+  const handleCellClick = (params) => {
+    
+    if (params.field === 'delete') {
+       deleteFormHandler(params.id)
+    }else{
+      getFormData(params.id);
+    }
   };
-  
-  const headerCellStyle = {
-    fontWeight: 'bold', 
-  };
-
 
   return (
     <>
@@ -143,6 +160,7 @@ function Forms({ data, loading, error, loadData }) {
            <Trend/>
            <Typography  sx={{marginY:1,fontSize:"2rem",fontWeight:"bold"}}>My Forms</Typography>
       <DataGrid
+      onCellClick={handleCellClick}
       sx={{marginY:1}}
       autoHeight
         getRowId={(row) => row._id}
@@ -151,10 +169,6 @@ function Forms({ data, loading, error, loadData }) {
               pageSize={pageSize}
         onPageChange={(newPage) => setPage(newPage)}
               onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
-        onRowClick={(val)=>{
-           console.log("th row clicked is ",val)
-           getFormData(val.id);
-        }}
         columns={columns}
         rowsPerPageOptions={[5, 10, 20]}
       />

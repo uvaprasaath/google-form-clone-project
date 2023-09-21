@@ -1,6 +1,6 @@
 import axios from "axios";
 import { formUrl, userUrl } from "../utils/datasource"
-import { apiGet, apiPost, apiPut } from "./apiendpoints"
+import { apiDelete, apiGet, apiPost, apiPut } from "./apiendpoints"
 
 export async function addForm(requestBody){
    try {
@@ -56,6 +56,13 @@ export async function getForm(formId,statusCheck=false){
     }
 }
 
+export async function deleteForm(formId){
+    try {
+        return await apiDelete(formUrl+`/${formId}`)
+    } catch (error) {
+        throw error
+    }
+}
 
 export async function postAnswers(requestBody){
      try{

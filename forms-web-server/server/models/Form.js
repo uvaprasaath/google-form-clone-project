@@ -1,5 +1,6 @@
 import { Schema, model } from "mongoose";
 import QuestionSchema from "./Question";
+import Responses from "./Responses";
 
 const FormSchema = new Schema(
     {
@@ -32,6 +33,11 @@ const FormSchema = new Schema(
     {timestamps:true}
 )
 
+
+
 const Form = model('form',FormSchema)
+
+
+
 
 export default Form;
