@@ -104,6 +104,25 @@ To get started with this project, follow these steps:
    * The Sequence Diagram
       ![getStatistics](https://github.com/uvaprasaath/google-form-clone-project/assets/143567664/9b2c7b18-1b29-402d-86a4-b973ebe62a8c)
 
+**8. api/form/:id**
+   * METHOD : DELETE
+   * DESCRIPTION : delete the form by form id and also the asociated data
+   * The Sequence Diagram
+
+     ![image](https://github.com/uvaprasaath/google-form-clone-project/assets/143567664/f533d31e-b26b-4d08-8d8b-75a0e95e6fa2)
+
+**User Forms**
+**1. api/users/forms**
+ * METHOD : GET
+ * DESCRIPTION : get all the forms by the user id
+ * The Sequence Diagram
+    
+   
+![getForms](https://github.com/uvaprasaath/google-form-clone-project/assets/143567664/4705b0e1-5ee2-4f7d-8338-5ab2e0d403de)
+
+
+
+
 
       
 
