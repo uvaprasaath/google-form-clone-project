@@ -7,6 +7,6 @@ This repository contains the backend code for a Google Forms clone project. The 
 
 - Frontend: React.js with Material-UI
 - Backend: Node.js with MongoDB
-- Hosting: GitLab Pages
+- Hosting: render.com
 
 
