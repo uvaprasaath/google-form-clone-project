@@ -56,5 +56,63 @@ To get started with this project, follow these steps:
    * The Sequence Diagram
      ![toengeneration](https://github.com/uvaprasaath/google-form-clone-project/assets/143567664/505f01c5-2b6b-40ff-8aa9-649357a40bd3)
 
+**Form Creation**
+
+**1. api/form/**
+   * METHOD : POST
+   * DESCRIPTION : To create a new form
+   * The Sequence Diagram
+     ![postForm](https://github.com/uvaprasaath/google-form-clone-project/assets/143567664/68c102e0-a2b8-44f0-a42d-78d60bdcbf60)
+     
+**2. api/form/:id**
+   * METHOD : PUT
+   * DESCRIPTION : To update a existing form by id 
+   * The Sequence Diagram
+     
+     ![formUpdate](https://github.com/uvaprasaath/google-form-clone-project/assets/143567664/0131d87b-33e8-4c1d-ae34-cf6e5aba8061)
+
+**3. api/form/:id**
+   * METHOD : GET
+   * DESCRIPTION : To get a existing form by id 
+   * The Sequence Diagram
+     
+     ![getformbyid](https://github.com/uvaprasaath/google-form-clone-project/assets/143567664/95ae8858-e4bd-4a29-8239-1210f15fd66d)
+
+**4. api/form/:id/views**
+   * METHOD : PUT
+   * DESCRIPTION : update the view count of the form 
+   * The Sequence Diagram
+     
+      ![updateViews](https://github.com/uvaprasaath/google-form-clone-project/assets/143567664/039822ce-38e2-4e80-9e41-d66a57e8f40a)
+
+**5. api/form/response**
+   * METHOD : POST
+   * DESCRIPTION : add new responses for the form 
+   * The Sequence Diagram
+     
+      ![getPostResponse](https://github.com/uvaprasaath/google-form-clone-project/assets/143567664/be0cc954-614f-4354-a21c-fb636b78ae7a)
+
+**6. api/form/response/:id**
+   * METHOD : GET
+   * DESCRIPTION : get all responses for the form by id
+   * The Sequence Diagram
+      ![getResponseforfrombyId](https://github.com/uvaprasaath/google-form-clone-project/assets/143567664/41610e7a-e247-4ae4-bd22-a256c9af226d)
+
+**7. api/form/response/statistics**
+   * METHOD : GET
+   * DESCRIPTION : get all statistics for the form by user id
+   * The Sequence Diagram
+      ![getStatistics](https://github.com/uvaprasaath/google-form-clone-project/assets/143567664/9b2c7b18-1b29-402d-86a4-b973ebe62a8c)
+
+
+      
+
+
+
+
+
+
+     
+
 
       
