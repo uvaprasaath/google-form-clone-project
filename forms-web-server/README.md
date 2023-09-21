@@ -29,7 +29,7 @@ This repository contains the backend code for a Google Forms clone project. The 
 
 To get started with this project, follow these steps:
 
-   1. Clone the repository: git clone https://github.com/uvaprasaath/google-forms-clone-backend.git
+   1. Clone the repository: git clone (https://github.com/uvaprasaath/google-form-clone-project.git)
    2. Navigate to the project directory: cd google-form-clone-project/forms-web-server
    3. Install the dependencies: npm i
    4. Build the project : npm run build
