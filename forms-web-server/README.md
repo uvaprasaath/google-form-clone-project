@@ -120,6 +120,10 @@ To get started with this project, follow these steps:
    
 ![getForms](https://github.com/uvaprasaath/google-form-clone-project/assets/143567664/4705b0e1-5ee2-4f7d-8338-5ab2e0d403de)
 
+ **Note** : You can try to test the endpoints using postman, import the postman collection which is attached along with the project [google-form-clone-api-route-wise-collection](https://github.com/uvaprasaath/google-form-clone-project/blob/main/forms-web-server/Google-Form-Clone.postman_collection.json)
+  
+For any questions or feedback, please reach out to [uvagk98@gmail.com](mailto:your-email@example.com).
+
 
 
 
